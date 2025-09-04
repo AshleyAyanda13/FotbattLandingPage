@@ -57,20 +57,25 @@ body {
     cursor: pointer;
     z-index: 1050;
   }
-  #chatBox {
-    position: fixed;
-    bottom: 100px;
-    right: 24px;
-    width: 320px;
-    max-width: 90%;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: none;
-    flex-direction: column;
-    z-index: 1050;
-  }
+ #chatBox {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 320px;
+  height: 400px;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+#chatBox.active {
+  display: flex;
+}
+
+
   #chatBox header {
     padding: .5rem 1rem;
     background: var(--bs-primary);
@@ -99,3 +104,12 @@ body {
     color: #fff;
     padding: .5rem 1rem;
   }
+#chatBox {
+  display: none !important;
+  transition: all 0.3s ease;
+}
+
+#chatBox.active {
+  display: flex !important;
+  
+}
