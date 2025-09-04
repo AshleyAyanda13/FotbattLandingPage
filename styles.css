@@ -1,0 +1,101 @@
+:root {
+  --bs-primary: #0a2240;
+  --bs-accent: #00d084;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  position: relative;
+  height: 100vh;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 34, 64, 0.6);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accent button */
+.btn-accent {
+  background-color: var(--bs-accent);
+  color: var(--bs-primary);
+  border: none;
+}
+
+.btn-accent:hover {
+  filter: brightness(1.1);
+}
+
+/* Override Bootstrap’s navbar brand font weight */
+.navbar-brand {
+  font-weight: 600;
+}
+ 
+  #chatToggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--bs-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1050;
+  }
+  #chatBox {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 320px;
+    max-width: 90%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 1050;
+  }
+  #chatBox header {
+    padding: .5rem 1rem;
+    background: var(--bs-primary);
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  #chatBox .messages {
+    flex: 1;
+    padding: .75rem;
+    overflow-y: auto;
+    height: 200px;
+  }
+  #chatBox footer {
+    display: flex;
+    border-top: 1px solid #eee;
+  }
+  #chatBox footer input {
+    flex: 1;
+    border: none;
+    padding: .5rem;
+  }
+  #chatBox footer button {
+    border: none;
+    background: var(--bs-accent);
+    color: #fff;
+    padding: .5rem 1rem;
+  }
